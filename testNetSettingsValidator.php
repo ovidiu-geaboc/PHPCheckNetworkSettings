@@ -8,8 +8,8 @@
 require('./NetSettingsValidator.php');
 function testNetSettingsValidator($set, $testNo)
 {
-    //var_dump($set);
-    $result = NetSettingsValidator::settingsAreValid($set['ip'], $set['netmask'], $set['gateway'], $set['dns1'], $set['dns2']);
+	$validator= new NetSettingsValidator();
+    $result = $validator->settingsAreValid($set['ip'], $set['netmask'], $set['gateway'], $set['dns1'], $set['dns2']);
     //assert($result==$set['checks']);
     $testResult = ($result==$set['checks']);
     echo("Test ${testNo} " . (($testResult)?" PASSED":"FAILED!") . "\n");
@@ -51,4 +51,4 @@ else
 {
     echo("\nTests Failed\n");
 }
-//
+
