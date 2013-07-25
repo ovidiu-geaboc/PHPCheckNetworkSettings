@@ -35,4 +35,5 @@ class NetSettingsValidator
         return($valuesValid && $isSameSubNet);
     }
  }
+ //
 
